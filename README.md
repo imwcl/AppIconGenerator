@@ -1,4 +1,4 @@
-# GenerationAppIcon
+# AppIconGenerator
 ![Language](https://img.shields.io/badge/Language-%20swift4%20%20-red.svg)
 ![Language](https://img.shields.io/badge/Platform-%20macOS%20%20-red.svg)
 
@@ -11,7 +11,7 @@
 ## Features
 
 - 一键生成AppIcon
-- 支持iphone、ipad、Mac、AppleWatch和carplay
+- 支持iphone、ipad、Mac、AppleWatch和CarPlay
 
 ## Usage
 
