@@ -496,6 +496,7 @@ func createAppIconContentsJson(appIcon: AppIcon) {
 /// - Parameters:
 ///   - size: 图片的大小
 ///   - scale: 倍数
+///   - filename: 文件名
 func createImage(size: CGSize, scale: CGFloat, image: CGImage, filename: String) {
     print("开始生成图片: \(filename)")
     let width  = Int(size.width * scale)
@@ -513,12 +514,12 @@ func createImage(size: CGSize, scale: CGFloat, image: CGImage, filename: String)
                                     bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
         context.interpolationQuality = .high
         context.draw(image, in: .init(origin: .zero, size: .init(width: width, height: height)))
-        if let inputImage = context.makeImage() {
+        if let outputImage = context.makeImage() {
             let outputImagePath = "AppIcon.appiconset/\(filename)"
             let outputUrl = URL(fileURLWithPath: outputImagePath) as CFURL
             let destination = CGImageDestinationCreateWithURL(outputUrl, kUTTypePNG, 1, nil)
             if let destination = destination {
-                CGImageDestinationAddImage(destination, inputImage, nil)
+                CGImageDestinationAddImage(destination, outputImage, nil)
                 if CGImageDestinationFinalize(destination) {
                     print("图片: \(filename) 生成成功\n")
                 }else {
