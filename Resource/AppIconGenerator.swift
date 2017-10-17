@@ -495,14 +495,14 @@ func createImage(size: CGSize, scale: CGFloat, image: CGImage, filename: String)
     let height = Int(size.height * scale)
     let bitsPerComponent = image.bitsPerComponent
     let bytesPerRow = image.bytesPerRow
-    let colorSpace  = image.colorSpace
+    let colorSpace  = CGColorSpaceCreateDeviceRGB()
     
     if let context = CGContext.init(data: nil,
                                     width: width,
                                     height: height,
                                     bitsPerComponent: bitsPerComponent,
                                     bytesPerRow: bytesPerRow,
-                                    space: colorSpace!,
+                                    space: colorSpace,
                                     bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue) {
         context.interpolationQuality = .high
         context.draw(image, in: .init(origin: .zero, size: .init(width: width, height: height)))
