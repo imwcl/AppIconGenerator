@@ -19,7 +19,7 @@
 
 ```shell
 cd Resource
-swift GenerationAppIcon.swift
+swift AppIconGenerator.swift
 ```
 
 ![](Images/complete.png)
