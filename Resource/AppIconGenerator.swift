@@ -19,14 +19,6 @@
 // @discussion 一键生成AppIcon
 //
 
-//
-//  main.swift
-//  aaaa
-//
-//  Created by 王崇磊 on 2017/10/14.
-//  Copyright © 2017年 王崇磊. All rights reserved.
-//
-
 import Foundation
 
 /// 完整的Contents.json数据
